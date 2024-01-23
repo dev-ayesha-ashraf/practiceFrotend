@@ -1,10 +1,11 @@
 import { useEffect , useState } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
+const apiUrl = "https://practice-backend-roan.vercel.app"
 function App() {
   const [users, setUsers] = useState([])
   useEffect(() => {
-    axios.get(`https://practice-backend-roan.vercel.app/getUsers`)
+    axios.get(`${apiUrl}/getUsers`)
       .then(response => setUsers(response.data))
       .catch(error => console.error(error));
   }, []);
